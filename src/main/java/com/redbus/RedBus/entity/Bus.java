@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -21,13 +22,8 @@ public class Bus {
     private String busType;
     private String fromLocation;
     private String toLocation;
-
-
-    private Date fromDate;
-
-
-    private Date toDate;
-
+    private LocalDate fromDate;
+    private LocalDate toDate;
     private int totalDuration; // in minutes
     private String fromTime;
     private String toTime;
@@ -35,5 +31,7 @@ public class Bus {
     private int totalSeats;
     private int availableSeats;
 
-
+    @OneToOne
+    @JoinColumn(name = "driver_id")
+    private Driver driver;
 }

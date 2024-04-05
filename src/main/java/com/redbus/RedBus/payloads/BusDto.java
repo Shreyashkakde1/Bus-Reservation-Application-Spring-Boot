@@ -1,9 +1,11 @@
 package com.redbus.RedBus.payloads;
 
+import com.redbus.RedBus.entity.Driver;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -15,11 +17,9 @@ public class BusDto {
     private String fromLocation;
     private String toLocation;
 
+    private LocalDate fromDate;
 
-    private Date fromDate;
-
-
-    private Date toDate;
+    private LocalDate toDate;
 
     private int totalDuration; // in minutes
     private String fromTime;
@@ -27,5 +27,5 @@ public class BusDto {
     private double price;
     private int totalSeats;
     private int availableSeats;
-
+    private Driver driver;
 }
